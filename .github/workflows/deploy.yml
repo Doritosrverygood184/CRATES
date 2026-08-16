@@ -22,10 +22,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       # Runs against the remote (production) D1 database. Migrations are
       # additive/idempotent by convention (see migrations/0001_init.sql,
