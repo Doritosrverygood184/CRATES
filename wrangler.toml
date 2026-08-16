@@ -1,0 +1,23 @@
+name = "crate-system"
+main = "src/worker.js"
+compatibility_date = "2024-11-01"
+
+# Serves everything in ./public as static files via env.ASSETS.fetch(request).
+# The Worker only intercepts /api/* and /auth/* — everything else falls
+# through to these static files.
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "crate-system-db"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+
+# Secrets (set with `wrangler secret put <NAME>`, never committed):
+#   DISCORD_CLIENT_ID
+#   DISCORD_CLIENT_SECRET
+#   SESSION_SECRET       - random 32+ char string, signs player session cookies
+#   ADMIN_PASSWORD       - the password for the /admin panel
+#   ADMIN_SESSION_SECRET - random 32+ char string, signs admin session cookies
+#   PUBLIC_BASE_URL      - e.g. https://crate-system.yoursubdomain.workers.dev
