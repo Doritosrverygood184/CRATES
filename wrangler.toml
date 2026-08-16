@@ -12,7 +12,7 @@ binding = "ASSETS"
 [[d1_databases]]
 binding = "DB"
 database_name = "crate-system-db"
-database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+database_id = "282e0ef9-7825-4c42-a475-25a5376670d7"
 
 # Secrets (set with `wrangler secret put <NAME>`, never committed):
 #   DISCORD_CLIENT_ID
